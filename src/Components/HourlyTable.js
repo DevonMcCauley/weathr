@@ -1,6 +1,14 @@
 import { Table } from "react-bootstrap";
 
 const HourlyTable = (props) => {
+	if (props.hourlyForecast.length < 1) {
+		return (
+			<div>
+				Nothing yet <i className="bi bi-tornado"></i> Try entering some
+				coordinates!
+			</div>
+		);
+	}
 	// Iterates through the forecast to build out each table row
 	const buildRows = props.hourlyForecast.map((forecast) => {
 		const forecastHour = new Date(forecast.startTime);
