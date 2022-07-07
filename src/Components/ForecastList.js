@@ -15,7 +15,6 @@ const ForecastList = (props) => {
 
 	// Iterates through the returned forecast objects to build the display cards
 	const forecastList = forecast.map((forecast) => {
-		console.log(forecast);
 		return (
 			<Col key={forecast.number}>
 				<Card style={{ height: "250px" }} border="primary" bg="gray900">

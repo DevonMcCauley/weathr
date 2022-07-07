@@ -5,6 +5,7 @@ import Forecast from "./Forecast";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import { Row } from "react-bootstrap";
+import HourlyTable from "./HourlyTable";
 
 // TODO: Likely refactor to use React context
 function App() {
@@ -112,14 +113,12 @@ function App() {
 					onChange={handleSwitchChange}
 				/>
 			</div>
-			{city && cityDiv}
 			{daily && dailyDiv}
 			{!daily && hourlyDiv}
-			<Forecast
-				forecast={forecast}
-				hourlyForecast={hourlyForecast}
-				daily={daily}
-			/>
+			{city && cityDiv}
+
+			{daily && <Forecast forecast={forecast} daily={daily} />}
+			{!daily && <HourlyTable hourlyForecast={hourlyForecast} />}
 		</Container>
 	);
 }
