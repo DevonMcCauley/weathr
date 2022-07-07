@@ -56,6 +56,7 @@ function App() {
 		setHourlyForecast(oneDayForecast);
 	};
 
+	// Makes a REST call to bigdatacloud.net to get the user's city from their latitude/longitude
 	const getCity = async () => {
 		const response = await axios({
 			method: "GET",
@@ -78,6 +79,7 @@ function App() {
 		});
 	};
 
+	// Toggles the daily vs hourly switch
 	const handleSwitchChange = () => {
 		setDaily(!daily);
 	};
